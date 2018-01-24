@@ -15,22 +15,36 @@ public class PlayerController : MonoBehaviour {
 	private float timeLeft;
 	private bool timeExpired;
 
-	void Start ()
+	private void Start ()
 	{
 		rb = GetComponent<Rigidbody> ();
+		StartNewGame ();
+	}
+
+	private void StartNewGame()
+	{
+		print ("Start new game");
 		count = 0;
 		timeLeft = 30.0f;
 		timeExpired = false;
 		SetCountText ();
 		SetTimeText ();
 		winText.text = "";
+
+
 	}
 
-	void Update ()
+	private void Update ()
 	{
 		if(!timeExpired)
 		{
 			SetTimeText();
+		}
+
+		//did user press N?
+		if (Input.GetKeyDown (KeyCode.N)) 
+		{
+			StartNewGame ();
 		}
 	}
 
