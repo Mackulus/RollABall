@@ -31,8 +31,6 @@ public class PlayerController : MonoBehaviour {
 		SetCountText ();
 		SetTimeText ();
 		winText.text = "";
-
-
 	}
 
 	private void Update ()
