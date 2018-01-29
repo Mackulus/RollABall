@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -40,12 +41,18 @@ public class PlayerController : MonoBehaviour {
 		{
 			SetTimeText();
 		}
-
+			
 		//did user press N?
 		if (Input.GetKeyDown (KeyCode.N)) 
 		{
 			StartNewGame ();
 		}
+
+		if (Input.GetKeyDown(KeyCode.N))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
+			
 	}
 
 	void FixedUpdate()
